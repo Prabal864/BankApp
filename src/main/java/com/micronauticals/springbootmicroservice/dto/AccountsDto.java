@@ -1,6 +1,6 @@
 package com.micronauticals.springbootmicroservice.dto;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-
 
 @Data
 public class AccountsDto {
