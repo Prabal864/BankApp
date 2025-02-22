@@ -2,6 +2,8 @@ package com.micronauticals.springbootmicroservice.constants;
 
 public final class AccountsConstants {
 
+    public static final String STATUS_500 = "500";
+
     private AccountsConstants(){
 
     }
