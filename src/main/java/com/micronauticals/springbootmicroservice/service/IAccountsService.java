@@ -1,9 +1,28 @@
 package com.micronauticals.springbootmicroservice.service;
 import com.micronauticals.springbootmicroservice.dto.CustomerDto;
-import com.micronauticals.springbootmicroservice.entity.Customer;
 
 
 public interface IAccountsService {
+    /**
+     * Create account.
+     *
+     * @param customerDto the customer dto
+     */
     void createAccount(CustomerDto customerDto);
+
+    /**
+     * Fetch account customer dto.
+     *
+     * @param mobileNumber the mobile number
+     * @return the customer dto
+     */
     CustomerDto fetchAccount(String mobileNumber);
+
+    /**
+     * Update account boolean.
+     *
+     * @param customerDto the customer dto
+     * @return the boolean
+     */
+    boolean updateAccount(CustomerDto customerDto);
 }
