@@ -6,10 +6,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
-public class SpringBootMicroserviceApplication {
+public class AccountsMicroservice {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootMicroserviceApplication.class, args);
+        SpringApplication.run(AccountsMicroservice.class, args);
     }
 
 }

@@ -4,7 +4,6 @@ import com.micronauticals.springbootmicroservice.dto.CustomerDto;
 import com.micronauticals.springbootmicroservice.dto.ResponseDto;
 import com.micronauticals.springbootmicroservice.service.IAccountsService;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -52,7 +51,7 @@ public class AccountsController {
    }
 
    @DeleteMapping("/deleteAccount")
-    public ResponseEntity<ResponseDto> deleteAccount(@RequestParam @Pattern(regexp = "(^$|[0-9{10}])", message = "invalid Mobile number")
+    public ResponseEntity<ResponseDto> deleteAccount(@RequestParam
                                                         String mobileNumber){
         boolean isDeleted = iAccountsService.deleteAccount(mobileNumber);
         if(isDeleted){
