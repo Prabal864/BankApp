@@ -1,0 +1,18 @@
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+
+build:
+  version: "0.0.3"
+
+accounts:
+  message: "Welcome to PROD environment Accounts Microservice"
+  contactDetails:
+    email: "production@test.com"
+    name: "Production Team"
+
+  onCallSupport:
+    - "999-456-7890"
+    - "999-765-4321"
+
