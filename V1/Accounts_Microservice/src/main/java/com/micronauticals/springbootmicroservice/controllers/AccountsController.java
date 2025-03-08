@@ -38,75 +38,70 @@ public class AccountsController {
     private String buildVersion;
 
     @PostMapping("/createAccount")
-   public ResponseEntity<ResponseDto> createAccount(@Valid @RequestBody CustomerDto customerDto ){
+    public ResponseEntity<ResponseDto> createAccount(@Valid @RequestBody CustomerDto customerDto) {
         iAccountsService.createAccount(customerDto);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(new ResponseDto(AccountsConstants.STATUS_201, "Account created successfully"));
-   }
+    }
 
-   @GetMapping("/fetchAccountDetails")
-   public ResponseEntity<CustomerDto> fetchAccountDetails(@RequestParam String mobileNumber){
+    @GetMapping("/fetchAccountDetails")
+    public ResponseEntity<CustomerDto> fetchAccountDetails(@RequestParam String mobileNumber) {
         CustomerDto customerDto = iAccountsService.fetchAccount(mobileNumber);
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(customerDto);
-   }
+    }
 
-   @PutMapping("/updateAccount")
-    public ResponseEntity<ResponseDto> updateAccountDetails(@Valid @RequestBody CustomerDto customerDto){
+    @PutMapping("/updateAccount")
+    public ResponseEntity<ResponseDto> updateAccountDetails(@Valid @RequestBody CustomerDto customerDto) {
         boolean isUpdated = iAccountsService.updateAccount(customerDto);
-        if(isUpdated){
+        if (isUpdated) {
             return ResponseEntity
                     .status(HttpStatus.OK)
                     .body(new ResponseDto(AccountsConstants.STATUS_200, AccountsConstants.MESSAGE_200));
-        }else{
+        } else {
             return ResponseEntity
                     .status(HttpStatus.EXPECTATION_FAILED)
                     .body(new ResponseDto(AccountsConstants.STATUS_417, AccountsConstants.MESSAGE_417_UPDATE));
         }
-   }
+    }
 
-   @DeleteMapping("/deleteAccount")
+    @DeleteMapping("/deleteAccount")
     public ResponseEntity<ResponseDto> deleteAccount(@RequestParam
-                                                        String mobileNumber){
+                                                     String mobileNumber) {
         boolean isDeleted = iAccountsService.deleteAccount(mobileNumber);
-        if(isDeleted){
+        if (isDeleted) {
             return ResponseEntity
                     .status(HttpStatus.OK)
                     .body(new ResponseDto(AccountsConstants.STATUS_200, AccountsConstants.MESSAGE_200));
-        }else{
+        } else {
             return ResponseEntity
                     .status(HttpStatus.EXPECTATION_FAILED)
                     .body(new ResponseDto(AccountsConstants.STATUS_417, AccountsConstants.MESSAGE_417_DELETE));
         }
-   }
+    }
 
-   @GetMapping("/buildInfo")
-   public ResponseEntity<String> getBuildInfo(){
-       return ResponseEntity
-               .status(HttpStatus.OK)
-               .body(buildVersion);
+    @GetMapping("/buildInfo")
+    public ResponseEntity<String> getBuildInfo() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(buildVersion);
 
-   }
+    }
 
-   @GetMapping("/environment")
-   public ResponseEntity<String> getEnvironment(){
-       return ResponseEntity
-               .status(HttpStatus.OK)
-               .body(environment.getProperty("MAVEN_HOME"));
-   }
+    @GetMapping("/environment")
+    public ResponseEntity<String> getEnvironment() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(environment.getProperty("MAVEN_HOME"));
+    }
 
     @GetMapping("/contact")
     public ResponseEntity<AccountsContactInfoDto> getContactInfo() {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(accountsContactInfoDto);
-    }
-
-    @GetMapping("/onCallSupport")
-    public String onCallSupport(){
-        return "On call support is available";
     }
 
 }
