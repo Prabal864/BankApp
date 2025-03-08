@@ -1,5 +1,6 @@
 package com.micronauticals.springbootmicroservice.controllers;
 import com.micronauticals.springbootmicroservice.constants.AccountsConstants;
+import com.micronauticals.springbootmicroservice.dto.AccountsContactInfoDto;
 import com.micronauticals.springbootmicroservice.dto.CustomerDto;
 import com.micronauticals.springbootmicroservice.dto.ResponseDto;
 import com.micronauticals.springbootmicroservice.service.IAccountsService;
@@ -13,20 +14,25 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Map;
 
+@Validated
 @RestController
 @RequestMapping(path = "/api", produces = {MediaType.APPLICATION_JSON_VALUE})
-@Validated
 public class AccountsController {
 
-    private IAccountsService iAccountsService;
+    private final IAccountsService iAccountsService;
 
-    public AccountsController(IAccountsService iAccountsService){
+    private final Environment environment;
+
+    private final AccountsContactInfoDto accountsContactInfoDto;
+
+    public AccountsController(IAccountsService iAccountsService, Environment environment, AccountsContactInfoDto accountsContactInfoDto) {
         this.iAccountsService = iAccountsService;
+        this.environment = environment;
+        this.accountsContactInfoDto = accountsContactInfoDto;
     }
-
-    @Autowired
-    private Environment environment;
 
     @Value("${build.version}")
     private String buildVersion;
@@ -84,11 +90,23 @@ public class AccountsController {
 
    }
 
-    @GetMapping("/environment")
+   @GetMapping("/environment")
    public ResponseEntity<String> getEnvironment(){
        return ResponseEntity
                .status(HttpStatus.OK)
                .body(environment.getProperty("MAVEN_HOME"));
    }
+
+    @GetMapping("/contact")
+    public ResponseEntity<AccountsContactInfoDto> getContactInfo() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(accountsContactInfoDto);
+    }
+
+    @GetMapping("/onCallSupport")
+    public String onCallSupport(){
+        return "On call support is available";
+    }
 
 }

@@ -17,6 +17,15 @@ spring:
         console:
           enabled: true
 
+    web:
+      resources:
+        chain:
+          strategy:
+            fixed:
+              enabled: true
+              paths: /**
+
+
 build:
   version: "0.0.1"
 
@@ -29,3 +38,4 @@ accounts:
   onCallSupport:
     - "123-456-7890"
     - "098-765-4321"
+
