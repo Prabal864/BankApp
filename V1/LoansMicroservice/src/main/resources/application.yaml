@@ -5,6 +5,9 @@ spring:
     username: sa
     password: ''
 
+  profiles:
+    active: "qa"
+
   h2:
     console:
       enabled: true
@@ -17,3 +20,4 @@ spring:
 
 server:
   port: 8082
+
