@@ -87,7 +87,6 @@ public class AccountsController {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(buildVersion);
-
     }
 
     @GetMapping("/environment")
