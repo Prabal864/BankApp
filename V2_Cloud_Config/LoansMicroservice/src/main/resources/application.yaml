@@ -5,8 +5,14 @@ spring:
     username: sa
     password: ''
 
+  application:
+    name: "loans"
+
+  config:
+    import: "configserver:http://localhost:8084/"
+
   profiles:
-    active: "qa"
+    active: "prod"
 
   h2:
     console:
