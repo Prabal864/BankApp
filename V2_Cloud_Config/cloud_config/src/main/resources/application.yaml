@@ -9,7 +9,7 @@ spring:
     config:
       server:
         native:
-          search-locations: "classpath:/config"
+          search-locations: "file:///D://Coding//Java Course//Spring-Project//SpringBootMicroservice-Config//V2_Cloud_Config//cloud_config//src//main//resources//config"
 
 
 server:
