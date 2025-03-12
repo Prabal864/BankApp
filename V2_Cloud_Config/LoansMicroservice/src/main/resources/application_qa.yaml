@@ -1,0 +1,18 @@
+spring:
+  config:
+    activate:
+      on-profile: "qa"
+
+build:
+  version: "0.0.2"
+
+accounts:
+  message: "Welcome to QA environment Loans Microservice"
+  contactDetails:
+    email: "pps@QA.com"
+    name: "PPS-940"
+
+  onCallSupport:
+    - "888-456-7890"
+    - "888-765-4321"
+
