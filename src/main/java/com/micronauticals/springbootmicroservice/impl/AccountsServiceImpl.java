@@ -13,7 +13,6 @@ import com.micronauticals.springbootmicroservice.repository.CustomerRepository;
 import com.micronauticals.springbootmicroservice.service.IAccountsService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Random;
 
@@ -30,8 +29,6 @@ public class AccountsServiceImpl implements IAccountsService {
         newAccount.setCustomerId(customer.getCustomerId());
         long randomAccNumber = 1000000000L + new Random().nextInt(900000000);
         newAccount.setAccountNumber(randomAccNumber);
-        newAccount.setCreatedAt(LocalDateTime.now());
-        newAccount.setCreatedBy("PPS");
         newAccount.setAccountType(AccountsConstants.SAVINGS);
         newAccount.setBranchAddress(AccountsConstants.ADDRESS);
         return newAccount;
@@ -45,8 +42,6 @@ public class AccountsServiceImpl implements IAccountsService {
         if(optionalCustomer.isPresent()){
             throw new CustomerAlreadyExistsException("Customer already exists with mobile number: "+customerDto.getMobileNumber());
         }
-        customer.setCreatedAt(LocalDateTime.now());
-        customer.setCreatedBy("PPS");
         Customer savedCustomer = customerRepository.save(customer);
         accountsRepository.save(createdNewAccount(savedCustomer));
     }
