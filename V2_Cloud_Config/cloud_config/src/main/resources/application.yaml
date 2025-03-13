@@ -15,7 +15,7 @@ spring:
           clone-on-start: true
           force-pull: true
           username: Prabal864
-          password: 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
+          
 
 
 #        native:
