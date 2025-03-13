@@ -7,7 +7,7 @@ build:
   version: "0.0.3"
 
 loans:
-  message: "Welcome to PROD environment Loans Microservice"
+  message: "Welcome to PRODUCTION-1 environment Loans Microservice"
   contactDetails:
     email: "production@test.com"
     name: "Production Team"
