@@ -6,7 +6,7 @@ spring:
 build:
   version: "0.0.3"
 
-accounts:
+cards:
   message: "Welcome to PROD environment Cards Microservice"
   contactDetails:
     email: "production@test.com"
