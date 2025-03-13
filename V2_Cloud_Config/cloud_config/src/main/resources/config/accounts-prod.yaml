@@ -3,7 +3,7 @@ build:
   version: "0.0.3"
 
 accounts:
-  message: "Welcome to PROD environment Accounts Microservice"
+  message: "Welcome to PRODUCTION-1 environment Accounts Microservice"
   contactDetails:
     email: "production@test.com"
     name: "Production Team"
