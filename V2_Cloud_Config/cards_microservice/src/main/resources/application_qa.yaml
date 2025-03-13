@@ -6,7 +6,7 @@ spring:
 build:
   version: "0.0.2"
 
-cards:
+accounts:
   message: "Welcome to QA environment Cards Microservice"
   contactDetails:
     email: "pps@QA.com"

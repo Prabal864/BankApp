@@ -17,12 +17,10 @@ spring:
           username: Prabal864
           password: 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
 
-encrypt:
-  key: "sfgwcay1231cbqy912c12cyc893741cb38"
-
 
 #        native:
 #          search-locations: "file:///D://Coding//Java Course//Spring-Project//SpringBootMicroservice-Config//V2_Cloud_Config//cloud_config//src//main//resources//config"
+
 
 server:
   port: 8084
