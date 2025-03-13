@@ -6,7 +6,7 @@ spring:
 build:
   version: "0.0.2"
 
-accounts:
+loans:
   message: "Welcome to QA environment Loans Microservice"
   contactDetails:
     email: "pps@QA.com"
