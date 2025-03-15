@@ -1,0 +1,75 @@
+services:
+
+  Config-Server:
+    image: "prabal864/java-spring:ConfigServer-S6"
+    container_name: Config_Server
+    ports:
+      - "8084:8084"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 700M
+    networks:
+      - Bank_Network
+
+  Account:
+    image: "prabal864/java-spring:Account-S6"
+    container_name: Account_MS
+    ports:
+      - "8081:8081"
+    deploy:
+      resources:
+        limits:
+            cpus: "0.25"
+            memory: 700M
+    networks:
+      - Bank_Network
+    environment:
+      SPRING_CONFIG_IMPORT: "configserver:http://Config-Server:8084"
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_APPLICATION_NAME: "accounts"
+    depends_on:
+      - Config-Server
+
+  Loan:
+    image: "prabal864/java-spring:Loans-S6"
+    container_name: Loan_MS
+    ports:
+      - "8082:8082"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 700M
+    networks:
+      - Bank_Network
+    environment:
+      SPRING_CONFIG_IMPORT: "configserver:http://Config-Server:8084"
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_APPLICATION_NAME: "loans"
+
+  Cards:
+    image: "prabal864/java-spring:Cards-S6"
+    container_name: Cards_MS
+    ports:
+      - "8083:8083"
+    build:
+      context: ./cards_microservice
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 700M
+    networks:
+      - Bank_Network
+    environment:
+      SPRING_CONFIG_IMPORT: "configserver:http://Config-Server:8084"
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_APPLICATION_NAME: "cards"
+
+networks:
+  Bank_Network:
+    driver: bridge
+
