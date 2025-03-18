@@ -5,8 +5,6 @@ import com.micronauticals.springbootmicroservice.dto.CustomerDto;
 import com.micronauticals.springbootmicroservice.dto.ResponseDto;
 import com.micronauticals.springbootmicroservice.service.IAccountsService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -14,8 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Map;
 
 @Validated
 @RestController
@@ -23,9 +19,7 @@ import java.util.Map;
 public class AccountsController {
 
     private final IAccountsService iAccountsService;
-
     private final Environment environment;
-
     private final AccountsContactInfoDto accountsContactInfoDto;
 
     public AccountsController(IAccountsService iAccountsService, Environment environment, AccountsContactInfoDto accountsContactInfoDto) {
@@ -34,8 +28,10 @@ public class AccountsController {
         this.accountsContactInfoDto = accountsContactInfoDto;
     }
 
-    @Value("${build.version}")
-    private String buildVersion;
+
+
+
+
 
     @PostMapping("/createAccount")
     public ResponseEntity<ResponseDto> createAccount(@Valid @RequestBody CustomerDto customerDto) {
@@ -82,12 +78,6 @@ public class AccountsController {
         }
     }
 
-    @GetMapping("/buildInfo")
-    public ResponseEntity<String> getBuildInfo() {
-        return ResponseEntity
-                .status(HttpStatus.OK)
-                .body(buildVersion);
-    }
 
     @GetMapping("/environment")
     public ResponseEntity<String> getEnvironment() {

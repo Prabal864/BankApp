@@ -36,7 +36,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
                 url = "https://www.eazybytes.com/swagger-ui.html"
         )
 )
-@EnableConfigurationProperties(CardsContactInfoDto.class)
+@EnableConfigurationProperties(value = CardsContactInfoDto.class)
 public class CardsMicroserviceApplication {
 
     public static void main(String[] args) {

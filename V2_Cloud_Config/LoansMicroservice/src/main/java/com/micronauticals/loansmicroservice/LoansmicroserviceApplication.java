@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableJpaAuditing(auditorAwareRef = "auditorAwareImpl")
-@EnableConfigurationProperties(LoansContactInfoDto.class)
+@EnableConfigurationProperties(value = LoansContactInfoDto.class)
 public class LoansmicroserviceApplication {
 
     public static void main(String[] args) {

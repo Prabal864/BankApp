@@ -84,6 +84,7 @@
                 <configuration>
                     <image>
                         <name>prabal864/java-spring:Config-Server</name>
+                        <builder>paketobuildpacks/builder-jammy-full</builder>
                     </image>
                     <excludes>
                         <exclude>
@@ -91,6 +92,17 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                </configuration>
+
+            </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.4.2</version>
+                <configuration>
+                    <to>
+                        <image>prabal864/java-spring:Config-Server</image>
+                    </to>
                 </configuration>
             </plugin>
         </plugins>

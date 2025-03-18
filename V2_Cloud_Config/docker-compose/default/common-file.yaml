@@ -1,0 +1,24 @@
+services:
+  network-deploy-service:
+    networks:
+      - Bank_Network
+
+    microservice-base-config:
+      extends:
+        service: network-deploy-service
+      deploy:
+        resources:
+          limits:
+            cpus: "0.25"
+            memory: 700M
+      environment:
+        SPRING_PROFILES_ACTIVE: default
+
+    microservice-configserver-config:
+      extends:
+        service: microservice-base-config
+      depends_on:
+        Config-Server:
+          condition: service_healthy
+      environment:
+        SPRING_CONFIG_IMPORT: "configserver:http://Config-Server:8084"

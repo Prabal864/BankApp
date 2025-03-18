@@ -1,6 +1,7 @@
 package com.micronauticals.cards_microservice.controller;
 
 import com.micronauticals.cards_microservice.constants.CardsConstants;
+import com.micronauticals.cards_microservice.dto.CardsContactInfoDto;
 import com.micronauticals.cards_microservice.dto.CardsDto;
 import com.micronauticals.cards_microservice.dto.ErrorResponseDto;
 import com.micronauticals.cards_microservice.dto.ResponseDto;
@@ -14,6 +15,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -30,11 +32,13 @@ import org.springframework.web.bind.annotation.*;
 )
 @RestController
 @RequestMapping(path = "/api", produces = {MediaType.APPLICATION_JSON_VALUE})
-@AllArgsConstructor
 @Validated
+@AllArgsConstructor
 public class CardsController {
 
     private ICardsService iCardsService;
+
+    private CardsContactInfoDto cardsContactInfoDto;
 
     @Operation(
             summary = "Create Card REST API",
@@ -159,6 +163,13 @@ public class CardsController {
                     .status(HttpStatus.EXPECTATION_FAILED)
                     .body(new ResponseDto(CardsConstants.STATUS_417, CardsConstants.MESSAGE_417_DELETE));
         }
+    }
+
+    @GetMapping("/contact")
+    public ResponseEntity<CardsContactInfoDto> getContactInfo() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(cardsContactInfoDto);
     }
 
 }

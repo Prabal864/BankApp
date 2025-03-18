@@ -133,7 +133,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <image>
-                        <name>prabal864/java-spring:Account</name>
+                        <name>prabal864/java-spring:Account-S6</name>
                     </image>
                     <excludes>
                         <exclude>

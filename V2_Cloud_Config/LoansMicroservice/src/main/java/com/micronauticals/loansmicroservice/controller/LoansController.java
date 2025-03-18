@@ -2,6 +2,7 @@ package com.micronauticals.loansmicroservice.controller;
 
 import com.micronauticals.loansmicroservice.constants.LoansConstants;
 import com.micronauticals.loansmicroservice.dto.ErrorResponseDto;
+import com.micronauticals.loansmicroservice.dto.LoansContactInfoDto;
 import com.micronauticals.loansmicroservice.dto.LoansDto;
 import com.micronauticals.loansmicroservice.dto.ResponseDto;
 import com.micronauticals.loansmicroservice.service.ILoansService;
@@ -31,6 +32,7 @@ import org.springframework.web.bind.annotation.*;
 public class LoansController {
 
     private ILoansService iLoansService;
+    private LoansContactInfoDto loansContactInfoDto;
 
     @Operation(
             summary = "Create Loan REST API",
@@ -160,6 +162,13 @@ public class LoansController {
                     .status(HttpStatus.EXPECTATION_FAILED)
                     .body(new ResponseDto(LoansConstants.STATUS_417, LoansConstants.MESSAGE_417_DELETE));
         }
+    }
+
+    @GetMapping("/contact")
+    public ResponseEntity<LoansContactInfoDto> getContactInfo() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(loansContactInfoDto);
     }
 
 }

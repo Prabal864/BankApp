@@ -1,16 +1,11 @@
-spring:
-  config:
-    activate:
-      on-profile: "prod"
-
 build:
   version: "0.0.3"
 
 cards:
   message: "Welcome to PRODUCTION-1 environment Cards Microservice"
   contactDetails:
-    email: "production@test.com"
     name: "Production Team"
+    email: "production@test.com"
 
   onCallSupport:
     - "999-456-7890"
