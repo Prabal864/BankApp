@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a88edb0b-3f98-4e7f-82cd-f307fe922331" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.copilot-plugin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SpringBootMicroservice-Config.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/AccountsMicroservice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/audit/AuditAwareImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/constants/AccountsConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/controllers/AccountsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/dto/AccountsContactInfoDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/dto/AccountsDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/dto/CustomerDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/dto/ErrorResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/dto/ResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/entity/Accounts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/entity/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/entity/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/exceptions/CustomerAlreadyExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/exceptions/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/exceptions/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/impl/AccountsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/mapper/AccountsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/mapper/CustomerMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/repository/AccountsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/repository/CustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/service/IAccountsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/resources/application_prod.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/resources/application_qa.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/main/resources/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/Accounts_Microservice/src/test/java/com/micronauticals/springbootmicroservice/AccountsMicroserviceTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/LoansmicroserviceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/audit/AuditAwareImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/constants/LoansConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/controller/LoansController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/dto/ErrorResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/dto/LoansDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/dto/ResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/entity/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/entity/Loans.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/exception/LoanAlreadyExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/exception/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/impl/LoansServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/mapper/LoansMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/repository/LoansRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/service/ILoansService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/resources/Schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/resources/application_prod.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/main/resources/application_qa.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/LoansMicroservice/src/test/java/com/micronauticals/loansmicroservice/LoansmicroserviceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/java/com/micronauticals/cards_microservice/CardsMicroserviceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/audit/AuditAwareImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/constants/CardsConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/controller/CardsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/dto/CardsDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/dto/ErrorResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/dto/ResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/entity/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/entity/Cards.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/exception/CardAlreadyExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/exception/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/impl/CardsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/mapper/CardsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/repository/CardsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/service/ICardsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/resources/application_prod.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/resources/application_qa.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/main/resources/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V1/cards_microservice/src/test/java/com/micronauticals/cards_microservice/CardsMicroserviceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/AccountsMicroservice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/audit/AuditAwareImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/constants/AccountsConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/controllers/AccountsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/dto/AccountsContactInfoDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/dto/AccountsDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/dto/CustomerDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/dto/ErrorResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/dto/ResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/entity/Accounts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/entity/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/entity/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/exceptions/CustomerAlreadyExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/exceptions/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/exceptions/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/impl/AccountsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/mapper/AccountsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/mapper/CustomerMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/repository/AccountsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/repository/CustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/java/com/micronauticals/springbootmicroservice/service/IAccountsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/resources/application_prod.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/resources/application_qa.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/main/resources/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/Accounts_Microservice/src/test/java/com/micronauticals/springbootmicroservice/AccountsMicroserviceTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/LoansmicroserviceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/audit/AuditAwareImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/constants/LoansConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/controller/LoansController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/dto/ErrorResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/dto/LoansContactInfoDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/dto/LoansDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/dto/ResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/entity/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/entity/Loans.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/exception/LoanAlreadyExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/exception/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/impl/LoansServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/mapper/LoansMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/repository/LoansRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/java/com/micronauticals/loansmicroservice/service/ILoansService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/resources/Schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/resources/application_prod.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/main/resources/application_qa.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/LoansMicroservice/src/test/java/com/micronauticals/loansmicroservice/LoansmicroserviceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/java/com/micronauticals/cards_microservice/CardsMicroserviceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/java/com/micronauticals/cards_microservice/dto/CardsContactInfoDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/audit/AuditAwareImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/constants/CardsConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/controller/CardsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/dto/CardsDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/dto/ErrorResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/dto/ResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/entity/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/entity/Cards.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/exception/CardAlreadyExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/exception/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/impl/CardsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/mapper/CardsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/repository/CardsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/java/com/micronauticals/cardsmicroservice/service/ICardsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/main/resources/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cards_microservice/src/test/java/com/micronauticals/cards_microservice/CardsMicroserviceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/src/main/java/com/micronauticals/cloud_config/CloudConfigApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/src/main/resources/config/accounts-prod.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/src/main/resources/config/accounts-qa.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/src/main/resources/config/accounts.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/src/main/resources/config/cards-prod.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/src/main/resources/config/cards-qa.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/src/main/resources/config/cards.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/src/main/resources/config/loans-prod.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/src/main/resources/config/loans-qa.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/src/main/resources/config/loans.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/cloud_config/src/test/java/com/micronauticals/cloud_config/CloudConfigApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/V2_Cloud_Config/docker-compose/default/docker-compose.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/cards_microservice/CardsMicroserviceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/cards_microservice/audit/AuditAwareImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/cards_microservice/constants/CardsConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/cards_microservice/controller/CardsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/cards_microservice/dto/CardsDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/cards_microservice/dto/ErrorResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/cards_microservice/dto/ResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/cards_microservice/entity/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/cards_microservice/entity/Cards.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/cards_microservice/exception/CardAlreadyExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/cards_microservice/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/cards_microservice/exception/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/cards_microservice/impl/CardsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/cards_microservice/mapper/CardsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/cards_microservice/repository/CardsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/cards_microservice/service/ICardsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/AccountsMicroservice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/audit/AuditAwareImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/constants/AccountsConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/controllers/AccountsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/dto/AccountsDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/dto/CustomerDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/dto/ErrorResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/dto/ResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/entity/Accounts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/entity/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/entity/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/exceptions/CustomerAlreadyExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/exceptions/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/exceptions/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/impl/AccountsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/mapper/AccountsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/mapper/CustomerMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/repository/AccountsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/repository/CustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/micronauticals/springbootmicroservice/service/IAccountsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/micronauticals/cards_microservice/CardsMicroserviceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/micronauticals/springbootmicroservice/AccountsMicroserviceTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Prabal864&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Prabal864/SpringBootProject.git&quot;,
+    &quot;accountId&quot;: &quot;18df66c3-e176-4cb5-ac06-b7d7d2b00baa&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2uUYTlEU5AHXQvuSqyDtFMba8Gi" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="openDirectoriesWithSingleClick" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Coding/Java Course/Spring-Project/SpringBootMicroservice-Section-7&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.CloudConfigApplication">
+    <configuration name="CardsMicroserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="cards_microservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.micronauticals.cards_microservice.CardsMicroserviceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CloudConfigApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="cloud_config" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.micronauticals.cloud_config.CloudConfigApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoansmicroserviceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="loansmicroservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.micronauticals.loansmicroservice.LoansmicroserviceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.59" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.59" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a88edb0b-3f98-4e7f-82cd-f307fe922331" name="Changes" comment="" />
+      <created>1742304630036</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742304630036</updated>
+      <workItem from="1742304632052" duration="1534000" />
+      <workItem from="1742306720455" duration="233000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

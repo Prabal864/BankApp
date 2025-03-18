@@ -1,0 +1,12 @@
+build:
+   version: "0.0.1"
+
+cards:
+  message: "Welcome to Cards Microservice"
+  contactDetails:
+    email: "pps@test.com"
+    name: "PPS-940"
+
+  onCallSupport:
+    - "123-456-7890"
+    - "098-765-4321"
