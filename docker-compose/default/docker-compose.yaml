@@ -1,5 +1,61 @@
 services:
 
+  accountsdb:
+    image: mysql
+    container_name: accountsdb
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: accounts_db
+
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 5s
+    networks:
+      - bank_network
+
+  loansdb:
+    image: mysql
+    container_name: loansdb
+    ports:
+      - "3307:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: loans_db
+
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 5s
+    networks:
+      - bank_network
+
+  cardsdb:
+    image: mysql
+    container_name: cardsdb
+    ports:
+      - "3308:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cards_db
+
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 5s
+    networks:
+      - bank_network
 
   rabbit:
     image: "rabbitmq:3.13-management"
@@ -30,6 +86,7 @@ services:
         limits:
           cpus: "1"
           memory: 700M
+
     healthcheck:
       test: curl --fail --silent http://configserver:8084/actuator/health/readiness | grep UP || exit 1
       interval: 30s
@@ -51,6 +108,8 @@ services:
     depends_on:
       configserver:
         condition: service_healthy
+      accountsdb:
+        condition: service_healthy
 
     deploy:
       resources:
@@ -64,6 +123,9 @@ services:
       SPRING_PROFILES_ACTIVE: default
       SPRING_APPLICATION_NAME: "accounts"
       SPRING_RABBITMQ_HOST: "rabbit"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://accountsdb:3306/accounts_db"
+      SPRING_DATASOURCE_USERNAME: "root"
+      SPRING_DATASOURCE_PASSWORD: "root"
 
 
   loan:
@@ -74,6 +136,9 @@ services:
     depends_on:
       configserver:
         condition: service_healthy
+      loansdb:
+        condition: service_healthy
+
     deploy:
       resources:
         limits:
@@ -86,6 +151,9 @@ services:
       SPRING_PROFILES_ACTIVE: default
       SPRING_APPLICATION_NAME: "loans"
       SPRING_RABBITMQ_HOST: "rabbit"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://loansdb:3306/loans_db"
+      SPRING_DATASOURCE_USERNAME: "root"
+      SPRING_DATASOURCE_PASSWORD: "root"
 
 
   cards:
@@ -95,6 +163,8 @@ services:
       - "8083:8083"
     depends_on:
       configserver:
+        condition: service_healthy
+      cardsdb:
         condition: service_healthy
 
     deploy:
@@ -109,6 +179,9 @@ services:
       SPRING_PROFILES_ACTIVE: default
       SPRING_APPLICATION_NAME: "cards"
       SPRING_RABBITMQ_HOST: "rabbit"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://cardsdb:3306/cards_db"
+      SPRING_DATASOURCE_USERNAME: "root"
+      SPRING_DATASOURCE_PASSWORD: "root"
 
 
 networks:
