@@ -7,28 +7,25 @@ spring:
   config:
     import: "optional:configserver:http://configserver:8084/"
 
-
   profiles:
     active: qa
 
   datasource:
-    url: jdbc:h2:mem:testdb
-    driverClassName: org.h2.Driver
-    username: sa
-    password: ''
-
-  h2:
-    console:
-      enabled: true
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3308/cards_db}
+    username: ${SPRING_DATASOURCE_URL:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:root}
 
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
     hibernate:
       ddl-auto: update
-    show-sql: true
+
+  sql:
+    init:
+      mode: always
 
   rabbitmq:
-    host: "rabbit"
+    host: ${SPRING_RABBITMQ_HOST:localhost}
     port: 5672
     username: "guest"
     password: "guest"
@@ -38,3 +35,24 @@ management:
     web:
       exposure:
         include: "*"
+  info:
+    env:
+      enabled: true
+  endpoint:
+    shutdown:
+      access: unrestricted
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+info:
+  app:
+    name: "cards"
+    description: "Cards Microservice"
+    version: "1.0.0"
