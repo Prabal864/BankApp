@@ -1,10 +1,11 @@
-package com.micronauticals.cards_microservice.dto;
+package com.micronauticals.springbootmicroservice.dto;
+
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
-import lombok.*;
+import lombok.Data;
 
 @Schema(name = "Cards",
         description = "Schema to hold Card information"
