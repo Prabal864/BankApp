@@ -10,7 +10,7 @@ spring:
     active: "prod"
 
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3307/loans_db}
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://loansdb:3307/loans_db}
     username: ${SPRING_DATASOURCE_URL:root}
     password: ${SPRING_DATASOURCE_PASSWORD:root}
 
@@ -24,7 +24,7 @@ spring:
       mode: always
 
   rabbitmq:
-    host: ${SPRING_RABBITMQ_HOST:localhost}
+    host: "rabbit"
     port: 5672
     username: "guest"
     password: "guest"
@@ -52,7 +52,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://eurekaserver:8761/eureka/
 
 
 info:

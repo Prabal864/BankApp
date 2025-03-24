@@ -16,7 +16,7 @@ spring:
           force-pull: true
 
   rabbitmq:
-    host: ${SPRING_RABBITMQ_HOST:localhost}
+    host: "rabbit"
     port: 5672
     password: "guest"
     username: "guest"
