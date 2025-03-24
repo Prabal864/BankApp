@@ -1,14 +1,15 @@
 package com.micronauticals.springbootmicroservice.dto;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 
 
-/**
- * The type Customer dto.
- */
+@Schema(name = "CustomerDetails",
+        description = "Schema to hold Card information"
+)
 @Data
-public class CustomerDto {
-
+public class CustomerDetailsDto {
     @NotEmpty(message = "Name is required")
     @Size(min=5,max=30, message = "Name should be between 5 to 30 characters")
     private String name;
@@ -22,5 +23,7 @@ public class CustomerDto {
     private String mobileNumber;
 
     private AccountsDto accountsDto;
+    private CardsDto cardsDto;
+    private LoansDto loansDto;
 
 }
