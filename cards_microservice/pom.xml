@@ -144,7 +144,7 @@
                         <image>eclipse-temurin:21-jre-alpine</image>
                     </from>
                     <to>
-                        <image>prabal864/java-spring:Cards-S8</image>
+                        <image>prabal864/java-spring:Cards-S9</image>
                     </to>
                 </configuration>
             </plugin>
@@ -154,7 +154,7 @@
                 <version>3.4.3</version>
                 <configuration>
                     <image>
-                        <name>prabal864/java-spring:Cards-S6</name>
+                        <name>prabal864/java-spring:Cards-S9</name>
                     </image>
                     <mainClass>com.micronauticals.cards_microservice.CardsMicroserviceApplication</mainClass>
                     <excludes>

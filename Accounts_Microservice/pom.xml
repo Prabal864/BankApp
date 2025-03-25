@@ -145,7 +145,7 @@
                         <image>eclipse-temurin:21-jre-alpine</image>
                     </from>
                     <to>
-                        <image>prabal864/java-spring:Accounts-S8</image>
+                        <image>prabal864/java-spring:Accounts-S9</image>
                     </to>
                 </configuration>
             </plugin>
@@ -154,7 +154,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <image>
-                        <name>prabal864/java-spring:Account-S6</name>
+                        <name>prabal864/java-spring:Account-S9</name>
                     </image>
                     <excludes>
                         <exclude>
