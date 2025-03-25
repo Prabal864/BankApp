@@ -138,13 +138,13 @@
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
-                <version>3.4.1</version>
+                <version>3.4.5</version>
                 <configuration>
                     <from>
                         <image>eclipse-temurin:21-jre-alpine</image>
                     </from>
                     <to>
-                        <image>prabal864/java-spring:Cards-S6</image>
+                        <image>prabal864/java-spring:Cards-S8</image>
                     </to>
                 </configuration>
             </plugin>
