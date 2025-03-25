@@ -95,14 +95,19 @@
                 </configuration>
 
             </plugin>
+
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
-                <version>3.4.2</version>
+                <version>3.4.5</version>
                 <configuration>
+                    <from>
+                        <image>prabal864/java-spring:base-with-curl</image>
+                    </from>
                     <to>
-                        <image>prabal864/java-spring:Config-Server</image>
+                        <image>prabal864/java-spring:Config-Server-S8</image>
                     </to>
+
                 </configuration>
             </plugin>
         </plugins>
