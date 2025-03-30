@@ -8,7 +8,8 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: true
+          enabled: false
+          lower-case-service-id: true
 
   rabbitmq:
     host: ${SPRING_RABBITMQ_HOST:localhost}
@@ -24,9 +25,16 @@ management:
   endpoint:
     gateway:
       access: unrestricted
+
   info:
     env:
       enabled: true
+
+logging:
+  level:
+    com:
+      micronauticals:
+        gateway_server: DEBUG
 
 info:
   app:
