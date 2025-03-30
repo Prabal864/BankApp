@@ -4,13 +4,13 @@ spring:
     name: "loans"
 
   config:
-    import: "optional:configserver:http://configserver:8084/"
+    import: "optional:configserver:http://localhost:8084/"
 
   profiles:
     active: "prod"
 
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://loansdb:3307/loans_db}
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3307/loans_db}
     username: ${SPRING_DATASOURCE_URL:root}
     password: ${SPRING_DATASOURCE_PASSWORD:root}
 
@@ -24,7 +24,7 @@ spring:
       mode: always
 
   rabbitmq:
-    host: "rabbit"
+    host: "localhost"
     port: 5672
     username: "guest"
     password: "guest"
@@ -52,7 +52,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://eurekaserver:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
 
 info:
@@ -60,3 +60,9 @@ info:
     name: "Loans"
     description: "Loans Microservice"
     version: "1.0.0"
+
+logging:
+  level:
+    com:
+      micronauticals:
+          loansmicroservice: DEBUG

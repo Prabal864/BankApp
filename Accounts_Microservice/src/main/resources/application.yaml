@@ -5,11 +5,11 @@ spring:
     application:
       name: "accounts"
     config:
-      import: "optional:configserver:http://configserver:8084/"
+      import: "optional:configserver:http://localhost:8084/"
     profiles:
       active: "prod"
     datasource:
-      url: jdbc:mysql://accountsdb:3306/accounts_db
+      url: jdbc:mysql://localhost:3306/accounts_db
       username: root
       password: root
     jpa:
@@ -44,7 +44,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://eurekaserver:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
 info:
   app:
@@ -52,3 +52,8 @@ info:
     description: "Accounts Microservice"
     version: "1.0.0"
 
+logging:
+  level:
+    com:
+      micronauticals:
+        springbootmicroservice: DEBUG

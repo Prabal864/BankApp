@@ -5,13 +5,13 @@ spring:
     name: "cards"
 
   config:
-    import: "optional:configserver:http://configserver:8084/"
+    import: "optional:configserver:http://localhost:8084/"
 
   profiles:
     active: qa
 
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://cardsdb:3308/cards_db}
+    url: jdbc:mysql://localhost:3308/cards_db
     username: ${SPRING_DATASOURCE_URL:root}
     password: ${SPRING_DATASOURCE_PASSWORD:root}
 
@@ -25,7 +25,7 @@ spring:
       mode: always
 
   rabbitmq:
-    host: "rabbit"
+    host: "localhost"
     port: 5672
     username: "guest"
     password: "guest"
@@ -49,10 +49,15 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://eurekaserver:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
 info:
   app:
     name: "cards"
     description: "Cards Microservice"
     version: "1.0.0"
+
+logging:
+  level:
+    com:
+      cards_microservice: DEBUG
