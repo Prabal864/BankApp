@@ -22,7 +22,7 @@ public class GatewayServerApplication {
                         .path("/bank/accounts/**")
                         .filters(f -> f.rewritePath("/bank/accounts/(?<segment>.*)", "/${segment}")
                                 .addResponseHeader("X-Response-Time", LocalDateTime.now().toString()))
-                        .uri("lb://account-service"))
+                        .uri("lb://ACCOUNTS"))
                 .route(p -> p
                         .path("/bank/loans/**")
                         .filters( f -> f.rewritePath("/bank/loans/(?<segment>.*)","/${segment}")
