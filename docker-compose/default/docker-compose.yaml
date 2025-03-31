@@ -1,5 +1,3 @@
-
-
 services:
 
   accountsdb:
@@ -98,7 +96,7 @@ services:
 
 
   configserver:
-    image: "prabal864/java-spring:Config-Server-S8"
+    image: "prabal864/java-spring:Config-Server-S9"
     container_name: configserver-ms
     ports:
       - "8084:8084"
@@ -118,9 +116,11 @@ services:
         condition: service_healthy
     networks:
       - bank_network
+    environment:
+       SPRING_RABBITMQ_HOST: "rabbit"
 
   eurekaserver:
-    image: "prabal864/java-spring:Eureka-Server-S8"
+    image: "prabal864/java-spring:Eureka-Server-S9"
     container_name: Eurekaserver-ms
     ports:
       - "8761:8761"
@@ -142,9 +142,10 @@ services:
       - bank_network
     environment:
       SPRING_APPLICATION_NAME: "eurekaserver"
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8084/"
 
   account:
-    image: "prabal864/java-spring:Accounts-S8"
+    image: "prabal864/java-spring:Accounts-S9"
     container_name: Account-MS
     ports:
       - "8081:8081"
@@ -170,10 +171,11 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://accountsdb:3306/accounts_db"
       SPRING_DATASOURCE_USERNAME: "root"
       SPRING_DATASOURCE_PASSWORD: "root"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8761/eureka/"
 
 
   loan:
-    image: "prabal864/java-spring:Loans-S8"
+    image: "prabal864/java-spring:Loans-S9"
     container_name: Loan_MS
     ports:
       - "8082:8082"
@@ -200,9 +202,10 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://loansdb:3306/loans_db"
       SPRING_DATASOURCE_USERNAME: "root"
       SPRING_DATASOURCE_PASSWORD: "root"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8761/eureka/"
 
   loan1:
-    image: "prabal864/java-spring:Loans-S8"
+    image: "prabal864/java-spring:Loans-S9"
     container_name: Loan_MS_1
     ports:
       - "8089:8082"
@@ -228,10 +231,11 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://loansdb2:3306/loans_db_2"
       SPRING_DATASOURCE_USERNAME: "root"
       SPRING_DATASOURCE_PASSWORD: "root"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8761/eureka/"
 
 
   cards:
-    image: "prabal864/java-spring:Cards-S8"
+    image: "prabal864/java-spring:Cards-S9"
     container_name: Cards_MS
     ports:
       - "8083:8083"
@@ -256,6 +260,30 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://cardsdb:3306/cards_db"
       SPRING_DATASOURCE_USERNAME: "root"
       SPRING_DATASOURCE_PASSWORD: "root"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8761/eureka/"
+
+  gatewayserver:
+    image: "prabal864/java-spring:Gateway-Server-S9"
+    container_name: Gateway_MS
+    ports:
+      - "8072:8072"
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+      rabbit:
+        condition: service_healthy
+
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 700M
+    networks:
+      - bank_network
+    environment:
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8084/"
+      SPRING_APPLICATION_NAME: "gatewayserver"
+      SPRING_RABBITMQ_HOST: "rabbit"
 
 
 networks:
