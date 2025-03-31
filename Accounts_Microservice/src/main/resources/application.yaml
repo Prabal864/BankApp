@@ -5,13 +5,13 @@ spring:
     application:
       name: "accounts"
     config:
-      import: "optional:configserver:http://localhost:8084/"
+      import: ${SPRING_CONFIG_IMPORT:optional:configserver:http://localhost:8084/}
     profiles:
       active: "prod"
     datasource:
-      url: jdbc:mysql://localhost:3306/accounts_db
-      username: root
-      password: root
+      url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/accounts_db}
+      username: ${SPRING_DATASOURCE_USERNAME:root}
+      password: ${SPRING_DATASOURCE_PASSWORD:root}
     jpa:
         show-sql: true
         hibernate:
@@ -22,8 +22,8 @@ spring:
     rabbitmq:
       host: ${SPRING_RABBITMQ_HOST:localhost}
       port: 5672
-      username: "guest"
-      password: "guest"
+      username: ${SPRING_DATASOURCE_URL:root}
+      password: ${SPRING_DATASOURCE_PASSWORD:root}
 
 management:
   endpoints:
@@ -44,7 +44,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://localhost:8761/eureka/}
 
 info:
   app:
