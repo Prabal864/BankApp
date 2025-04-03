@@ -25,6 +25,19 @@ spring:
       username: ${SPRING_DATASOURCE_URL:guest}
       password: ${SPRING_DATASOURCE_PASSWORD:guest}
 
+    cloud:
+      openfeign:
+        circuitbreaker:
+          enabled: true
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      sliding-window-size: 10
+      failure-rate-threshold: 50
+      wait-duration-in-open-state: 10000
+      permitted-number-of-calls-in-half-open-state: 3
+
 management:
   endpoints:
     web:
