@@ -4,7 +4,10 @@ import com.micronauticals.springbootmicroservice.dto.AccountsContactInfoDto;
 import com.micronauticals.springbootmicroservice.dto.CustomerDto;
 import com.micronauticals.springbootmicroservice.dto.ResponseDto;
 import com.micronauticals.springbootmicroservice.service.IAccountsService;
+import io.github.resilience4j.retry.annotation.Retry;
 import jakarta.validation.Valid;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path = "/api", produces = {MediaType.APPLICATION_JSON_VALUE})
 public class AccountsController {
 
+    private static final Logger logger = LoggerFactory.getLogger(AccountsController.class);
     private final IAccountsService iAccountsService;
     private final Environment environment;
     private final AccountsContactInfoDto accountsContactInfoDto;
@@ -27,11 +31,6 @@ public class AccountsController {
         this.environment = environment;
         this.accountsContactInfoDto = accountsContactInfoDto;
     }
-
-
-
-
-
 
     @PostMapping("/createAccount")
     public ResponseEntity<ResponseDto> createAccount(@Valid @RequestBody CustomerDto customerDto) {
@@ -86,11 +85,18 @@ public class AccountsController {
                 .body(environment.getProperty("MAVEN_HOME"));
     }
 
+    @Retry(name = "getBuildInfo", fallbackMethod = "getContactInfoFallback")
     @GetMapping("/contact")
     public ResponseEntity<AccountsContactInfoDto> getContactInfo() {
+        logger.debug("getContactInfo method invoked");
+        throw new NullPointerException();
+    }
+
+    public ResponseEntity<String> getContactInfoFallback(Throwable throwable) {
+        logger.debug("getContactInfoFallback method invoked");
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(accountsContactInfoDto);
+                .body("0.0.1");
     }
 
 }
