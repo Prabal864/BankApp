@@ -154,7 +154,7 @@
                 <version>3.4.3</version>
                 <configuration>
                     <image>
-                        <name>prabal864/java-spring:Cards-S9</name>
+                        <name>prabal864/java-spring:Card-S10</name>
                     </image>
                     <mainClass>com.micronauticals.cards_microservice.CardsMicroserviceApplication</mainClass>
                     <excludes>
