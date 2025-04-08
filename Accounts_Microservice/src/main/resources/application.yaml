@@ -22,8 +22,8 @@ spring:
     rabbitmq:
       host: ${SPRING_RABBITMQ_HOST:localhost}
       port: 5672
-      username: ${SPRING_DATASOURCE_URL:guest}
-      password: ${SPRING_DATASOURCE_PASSWORD:guest}
+      username: ${SPRING_RABBITMQ_USERNAME:guest}
+      password: ${SPRING_RABBITMQ_PASSWORD:guest}
 
     cloud:
       openfeign:
@@ -70,3 +70,20 @@ logging:
     com:
       micronauticals:
         springbootmicroservice: DEBUG
+
+resilience4j:
+  retry:
+    configs:
+        default:
+            max-attempts: 3
+            wait-duration: 1000ms
+            enable-exponential-backoff: true
+            exponential-backoff-multiplier: 2
+
+resilience4j.ratelimiter:
+    configs:
+      default:
+        limit-refresh-period: 10000
+        limit-for-period: 1
+        timeout-duration: 1000
+

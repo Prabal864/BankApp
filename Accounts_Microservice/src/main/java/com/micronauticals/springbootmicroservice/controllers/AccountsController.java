@@ -4,6 +4,7 @@ import com.micronauticals.springbootmicroservice.dto.AccountsContactInfoDto;
 import com.micronauticals.springbootmicroservice.dto.CustomerDto;
 import com.micronauticals.springbootmicroservice.dto.ResponseDto;
 import com.micronauticals.springbootmicroservice.service.IAccountsService;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 import jakarta.validation.Valid;
 import org.slf4j.LoggerFactory;
@@ -85,11 +86,19 @@ public class AccountsController {
                 .body(environment.getProperty("MAVEN_HOME"));
     }
 
-    @Retry(name = "getBuildInfo", fallbackMethod = "getContactInfoFallback")
+    @Retry(name = "getBuildInfo")
+    @RateLimiter(name = "getAccountDetails", fallbackMethod = "getContactInfoFallback")
     @GetMapping("/contact")
-    public ResponseEntity<AccountsContactInfoDto> getContactInfo() {
+    public ResponseEntity<AccountsContactInfoDto> getContactInfo(){
         logger.debug("getContactInfo method invoked");
-        throw new NullPointerException();
+        return ResponseEntity.status(HttpStatus.OK).body(accountsContactInfoDto);
+    }
+
+    public ResponseEntity<String> getContactInfoRateLimitFallback(Throwable throwable) {
+        logger.debug("getContactInfoRateLimitFallback method invoked");
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body("Too many requests, please try again later");
     }
 
     public ResponseEntity<String> getContactInfoFallback(Throwable throwable) {
