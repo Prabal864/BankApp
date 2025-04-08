@@ -1,4 +1,23 @@
 services:
+  redis:
+    image: redis:latest
+    container_name: redis_ms
+    ports:
+      - "6379:6379"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 500M
+    networks:
+      - bank_network
+
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 5s
 
   accountsdb:
     image: mysql
@@ -96,7 +115,7 @@ services:
 
 
   configserver:
-    image: "prabal864/java-spring:Config-Server-S9"
+    image: "prabal864/java-spring:Config-Server-S10"
     container_name: configserver-ms
     ports:
       - "8084:8084"
@@ -120,7 +139,7 @@ services:
        SPRING_RABBITMQ_HOST: "rabbit"
 
   eurekaserver:
-    image: "prabal864/java-spring:Eureka-Server-S9"
+    image: "prabal864/java-spring:Eureka-Server-S10"
     container_name: Eurekaserver-ms
     ports:
       - "8761:8761"
@@ -145,7 +164,7 @@ services:
       SPRING_CONFIG_IMPORT: "configserver:http://configserver:8084/"
 
   account:
-    image: "prabal864/java-spring:Accounts-S9"
+    image: "prabal864/java-spring:Accounts-S10"
     container_name: Account-MS
     ports:
       - "8081:8081"
@@ -175,7 +194,7 @@ services:
 
 
   loan:
-    image: "prabal864/java-spring:Loans-S9"
+    image: "prabal864/java-spring:Loans-S10"
     container_name: Loan_MS
     ports:
       - "8082:8082"
@@ -205,7 +224,7 @@ services:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8761/eureka/"
 
   loan1:
-    image: "prabal864/java-spring:Loans-S9"
+    image: "prabal864/java-spring:Loans-S10"
     container_name: Loan_MS_1
     ports:
       - "8089:8082"
@@ -263,7 +282,7 @@ services:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8761/eureka/"
 
   gatewayserver:
-    image: "prabal864/java-spring:Gateway-Server-S9"
+    image: "prabal864/java-spring:Gateway-Server-S10"
     container_name: Gateway_MS
     ports:
       - "8072:8072"
@@ -271,6 +290,8 @@ services:
       eurekaserver:
         condition: service_healthy
       rabbit:
+        condition: service_healthy
+      redis:
         condition: service_healthy
 
     deploy:
@@ -284,6 +305,9 @@ services:
       SPRING_CONFIG_IMPORT: "configserver:http://configserver:8084/"
       SPRING_APPLICATION_NAME: "gatewayserver"
       SPRING_RABBITMQ_HOST: "rabbit"
+      SPRING_DATA_REDIS_HOST: "redis"
+      SPRING_DATA_REDIS_PORT: "6379"
+      SPRING_DATA_REDIS_CONNECT-TIMEOUT: "2s"
 
 
 networks:
