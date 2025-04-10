@@ -162,7 +162,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <image>
-                        <name>prabal864/java-spring:Account-S9</name>
+                        <name>prabal864/java-spring:Account-S10</name>
                     </image>
                     <excludes>
                         <exclude>
