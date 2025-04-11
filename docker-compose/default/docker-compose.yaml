@@ -75,7 +75,29 @@ services:
       - gateway
     networks:
       - bank_network
+  
+  prometheus:
+    image: prom/prometheus:v3.1.0
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ../observability/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - bank_network
 
+  tempo:
+    image: grafana/tempo:2.6.1
+    container_name: tempo
+    command: -config.file /etc/tempo-config.yaml
+    ports:
+      - "3110:3100"
+      - "4318:4318"
+    volumes:
+      - ../observability/tempo/tempo.yaml:/etc/tempo-config.yaml
+    networks:
+      - bank_network
+        
   minio:
     image: minio/minio:RELEASE.2024-12-18T13-15-44Z
     entrypoint:
@@ -298,7 +320,7 @@ services:
 
 
   configserver:
-    image: "prabal864/java-spring:Config-Server-S10"
+    image: "prabal864/java-spring:Config-Server-S11"
     container_name: configserver-ms
     ports:
       - "8084:8084"
@@ -322,8 +344,8 @@ services:
        SPRING_RABBITMQ_HOST: "rabbit"
 
   eurekaserver:
-    image: "prabal864/java-spring:Eureka-Server-S10"
-    container_name: Eurekaserver-ms
+    image: "prabal864/java-spring:Eureka-Server-S11"
+    container_name: eurekaserver
     ports:
       - "8761:8761"
     deploy:
@@ -347,7 +369,7 @@ services:
       SPRING_CONFIG_IMPORT: "configserver:http://configserver:8084/"
 
   account:
-    image: "prabal864/java-spring:Accounts-S10"
+    image: "prabal864/java-spring:Accounts-S11"
     container_name: Account-MS
     ports:
       - "8081:8081"
@@ -377,7 +399,7 @@ services:
 
 
   loan:
-    image: "prabal864/java-spring:Loans-S10"
+    image: "prabal864/java-spring:Loans-S11"
     container_name: Loan_MS
     ports:
       - "8082:8082"
@@ -407,8 +429,8 @@ services:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8761/eureka/"
 
   cards:
-    image: "prabal864/java-spring:Cards-S9"
-    container_name: Cards_MS
+    image: "prabal864/java-spring:Cards-S11"
+    container_name: cards
     ports:
       - "8083:8083"
     depends_on:
@@ -435,7 +457,7 @@ services:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8761/eureka/"
 
   gatewayserver:
-    image: "prabal864/java-spring:Gateway-Server-S10"
+    image: "prabal864/java-spring:Gateway-Server-S11"
     container_name: Gateway_MS
     ports:
       - "8072:8072"
