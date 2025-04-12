@@ -43,7 +43,10 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -78,11 +81,7 @@
                 <artifactId>caffeine</artifactId>
                 <version>3.1.2</version>
             </dependency>
-            <dependency>
-                <groupId>io.micrometer</groupId>
-                <artifactId>micrometer-registry-prometheus</artifactId>
-                <version>1.15.0-M3</version>
-            </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-cache</artifactId>
@@ -105,7 +104,7 @@
                         <image>prabal864/java-spring:base-with-curl</image>
                     </from>
                     <to>
-                        <image>prabal864/java-spring:Eureka-Server-S10</image>
+                        <image>prabal864/java-spring:Eureka-Server-S11</image>
                     </to>
                 </configuration>
             </plugin>
