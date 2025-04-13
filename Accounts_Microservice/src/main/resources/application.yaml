@@ -73,6 +73,8 @@ logging:
     com:
       micronauticals:
         springbootmicroservice: DEBUG
+  pattern:
+    level: "%5p[${spring.application.name},%X{trace_id},%X{span_id}]"
 
 resilience4j:
   retry:
@@ -89,4 +91,3 @@ resilience4j.ratelimiter:
         limit-refresh-period: 10000
         limit-for-period: 1
         timeout-duration: 1000
-
