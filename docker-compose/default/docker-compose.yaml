@@ -342,6 +342,11 @@ services:
       - bank_network
     environment:
        SPRING_RABBITMQ_HOST: "rabbit"
+       JAVA_TOOL_OPTIONS: "-javaagent:/app/libs/opentelemetry-javaagent-2.11.0.jar"
+       OTEL_EXPORTER_OTLP_ENDPOINT: "http://tempo:4318"
+       OTEL_METRICS_EXPORTER: none
+       OTEL_LOGS_EXPORTER: none
+       OTEL_SERVICE_NAME: "configserver"
 
   eurekaserver:
     image: "prabal864/java-spring:Eureka-Server-S11"
@@ -367,6 +372,11 @@ services:
     environment:
       SPRING_APPLICATION_NAME: "eurekaserver"
       SPRING_CONFIG_IMPORT: "configserver:http://configserver:8084/"
+      JAVA_TOOL_OPTIONS: "-javaagent:/app/libs/opentelemetry-javaagent-2.11.0.jar"
+      OTEL_EXPORTER_OTLP_ENDPOINT: "http://tempo:4318"
+      OTEL_METRICS_EXPORTER: none
+      OTEL_LOGS_EXPORTER: none
+      OTEL_SERVICE_NAME: "eurekaserver"
 
   account:
     image: "prabal864/java-spring:Accounts-S11"
@@ -396,7 +406,11 @@ services:
       SPRING_DATASOURCE_USERNAME: "root"
       SPRING_DATASOURCE_PASSWORD: "root"
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8761/eureka/"
-
+      JAVA_TOOL_OPTIONS: "-javaagent:/app/libs/opentelemetry-javaagent-2.11.0.jar"
+      OTEL_EXPORTER_OTLP_ENDPOINT: "http://tempo:4318"
+      OTEL_METRICS_EXPORTER: none
+      OTEL_LOGS_EXPORTER: none
+      OTEL_SERVICE_NAME: "accounts"
 
   loan:
     image: "prabal864/java-spring:Loans-S11"
@@ -427,6 +441,11 @@ services:
       SPRING_DATASOURCE_USERNAME: "root"
       SPRING_DATASOURCE_PASSWORD: "root"
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8761/eureka/"
+      JAVA_TOOL_OPTIONS: "-javaagent:/app/libs/opentelemetry-javaagent-2.11.0.jar"
+      OTEL_EXPORTER_OTLP_ENDPOINT: "http://tempo:4318"
+      OTEL_METRICS_EXPORTER: none
+      OTEL_LOGS_EXPORTER: none
+      OTEL_SERVICE_NAME: "loans"
 
   cards:
     image: "prabal864/java-spring:Cards-S11"
@@ -455,6 +474,11 @@ services:
       SPRING_DATASOURCE_USERNAME: "root"
       SPRING_DATASOURCE_PASSWORD: "root"
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8761/eureka/"
+      JAVA_TOOL_OPTIONS: "-javaagent:/app/libs/opentelemetry-javaagent-2.11.0.jar"
+      OTEL_EXPORTER_OTLP_ENDPOINT: "http://tempo:4318"
+      OTEL_METRICS_EXPORTER: none
+      OTEL_LOGS_EXPORTER: none
+      OTEL_SERVICE_NAME: "cards"
 
   gatewayserver:
     image: "prabal864/java-spring:Gateway-Server-S11"
@@ -483,6 +507,11 @@ services:
       SPRING_DATA_REDIS_HOST: "redis"
       SPRING_DATA_REDIS_PORT: "6379"
       SPRING_DATA_REDIS_CONNECT-TIMEOUT: "2s"
+      JAVA_TOOL_OPTIONS: "-javaagent:/app/libs/opentelemetry-javaagent-2.11.0.jar"
+      OTEL_EXPORTER_OTLP_ENDPOINT: "http://tempo:4318"
+      OTEL_METRICS_EXPORTER: none
+      OTEL_LOGS_EXPORTER: none
+      OTEL_SERVICE_NAME: "gatewayserver"
 
 
 networks:
