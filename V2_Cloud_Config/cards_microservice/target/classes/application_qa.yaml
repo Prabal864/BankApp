@@ -1,12 +1,8 @@
-spring:
-  config:
-    activate:
-      on-profile: "qa"
 
 build:
   version: "0.0.2"
 
-accounts:
+cards:
   message: "Welcome to QA environment Cards Microservice"
   contactDetails:
     email: "pps@QA.com"

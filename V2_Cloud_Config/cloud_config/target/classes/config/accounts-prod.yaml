@@ -1,12 +1,20 @@
+<<<<<<<< HEAD:cloud_config/src/main/resources/config/cards-prod.yaml
+build:
+  version: "0.0.3"
+
+cards:
+  message: "Welcome to PRODUCTION-1 environment Cards Microservice"
+========
 
 build:
   version: "0.0.3"
 
 accounts:
   message: "Welcome to PRODUCTION-1 environment Accounts Microservice"
+>>>>>>>> Logging_Monitoring:V2_Cloud_Config/cloud_config/target/classes/config/accounts-prod.yaml
   contactDetails:
-    email: "production@test.com"
     name: "Production Team"
+    email: "production@test.com"
 
   onCallSupport:
     - "999-456-7890"

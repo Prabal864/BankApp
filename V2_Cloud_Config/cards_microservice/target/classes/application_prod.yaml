@@ -1,13 +1,9 @@
-spring:
-  config:
-    activate:
-      on-profile: "prod"
 
 build:
   version: "0.0.3"
 
-accounts:
-  message: "Welcome to PROD environment Cards Microservice"
+loans:
+  message: "Welcome to PRODUCTION-1 environment Loans Microservice"
   contactDetails:
     email: "production@test.com"
     name: "Production Team"
