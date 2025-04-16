@@ -1,0 +1,89 @@
+server:
+  port: 8081
+
+spring:
+    application:
+      name: "accounts"
+    config:
+      import: ${SPRING_CONFIG_IMPORT:optional:configserver:http://localhost:8084/}
+    profiles:
+      active: "prod"
+    datasource:
+      url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/accounts_db}
+      username: ${SPRING_DATASOURCE_USERNAME:root}
+      password: ${SPRING_DATASOURCE_PASSWORD:root}
+    jpa:
+        show-sql: true
+        hibernate:
+          ddl-auto: update
+    sql:
+      init:
+        mode: always
+    rabbitmq:
+      host: ${SPRING_RABBITMQ_HOST:localhost}
+      port: 5672
+      username: ${SPRING_RABBITMQ_USERNAME:guest}
+      password: ${SPRING_RABBITMQ_PASSWORD:guest}
+
+    cloud:
+      openfeign:
+        circuitbreaker:
+          enabled: true
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      sliding-window-size: 10
+      failure-rate-threshold: 50
+      wait-duration-in-open-state: 10000
+      permitted-number-of-calls-in-half-open-state: 3
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+  endpoint:
+    shutdown:
+      access: unrestricted
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://localhost:8761/eureka/}
+
+info:
+  app:
+    name: "accounts"
+    description: "Accounts Microservice"
+    version: "1.0.0"
+
+logging:
+  level:
+    com:
+      micronauticals:
+        springbootmicroservice: DEBUG
+
+resilience4j:
+  retry:
+    configs:
+        default:
+            max-attempts: 3
+            wait-duration: 1000ms
+            enable-exponential-backoff: true
+            exponential-backoff-multiplier: 2
+
+resilience4j.ratelimiter:
+    configs:
+      default:
+        limit-refresh-period: 10000
+        limit-for-period: 1
+        timeout-duration: 1000
+

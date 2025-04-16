@@ -1,0 +1,316 @@
+services:
+  redis:
+    image: redis:latest
+    container_name: redis_ms
+    ports:
+      - "6379:6379"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 500M
+    networks:
+      - bank_network
+
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 5s
+
+  accountsdb:
+    image: mysql
+    container_name: accountsdb
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: accounts_db
+
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 5s
+    networks:
+      - bank_network
+
+  loansdb:
+    image: mysql
+    container_name: loansdb
+    ports:
+      - "3307:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: loans_db
+
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 5s
+    networks:
+      - bank_network
+
+  loansdb2:
+    image: mysql
+    container_name: loansdb-2
+    ports:
+      - "3309:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: loans_db_2
+
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 5s
+    networks:
+      - bank_network
+
+  cardsdb:
+    image: mysql
+    container_name: cardsdb
+    ports:
+      - "3308:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cards_db
+
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 5s
+    networks:
+      - bank_network
+
+  rabbit:
+    image: "rabbitmq:3.13-management"
+    container_name: Rabbit
+    hostname: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+    healthcheck:
+      test: rabbitmq-diagnostics check_port_connectivity
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+
+    networks:
+      - bank_network
+
+
+  configserver:
+    image: "prabal864/java-spring:Config-Server-S10"
+    container_name: configserver-ms
+    ports:
+      - "8084:8084"
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 700M
+
+    healthcheck:
+      test: curl --fail --silent http://configserver:8084/actuator/health/readiness | grep UP || exit 1
+      interval: 30s
+      timeout: 5s
+      retries: 20
+    depends_on:
+      rabbit:
+        condition: service_healthy
+    networks:
+      - bank_network
+    environment:
+       SPRING_RABBITMQ_HOST: "rabbit"
+
+  eurekaserver:
+    image: "prabal864/java-spring:Eureka-Server-S10"
+    container_name: Eurekaserver-ms
+    ports:
+      - "8761:8761"
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 700M
+
+    healthcheck:
+      test: curl --fail --silent http://eurekaserver:8761/actuator/health/readiness | grep UP || exit 1
+      interval: 30s
+      timeout: 5s
+      retries: 20
+    depends_on:
+      configserver:
+        condition: service_healthy
+    networks:
+      - bank_network
+    environment:
+      SPRING_APPLICATION_NAME: "eurekaserver"
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8084/"
+
+  account:
+    image: "prabal864/java-spring:Accounts-S10"
+    container_name: Account-MS
+    ports:
+      - "8081:8081"
+
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+      accountsdb:
+        condition: service_healthy
+
+    deploy:
+      resources:
+        limits:
+            cpus: "1"
+            memory: 700M
+    networks:
+      - bank_network
+    environment:
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8084/"
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_APPLICATION_NAME: "accounts"
+      SPRING_RABBITMQ_HOST: "rabbit"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://accountsdb:3306/accounts_db"
+      SPRING_DATASOURCE_USERNAME: "root"
+      SPRING_DATASOURCE_PASSWORD: "root"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8761/eureka/"
+
+
+  loan:
+    image: "prabal864/java-spring:Loans-S10"
+    container_name: Loan_MS
+    ports:
+      - "8082:8082"
+
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+      loansdb:
+        condition: service_healthy
+
+    deploy:
+
+      resources:
+        limits:
+          cpus: "1"
+          memory: 700M
+    networks:
+      - bank_network
+    environment:
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8084/"
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_APPLICATION_NAME: "loans"
+      SPRING_RABBITMQ_HOST: "rabbit"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://loansdb:3306/loans_db"
+      SPRING_DATASOURCE_USERNAME: "root"
+      SPRING_DATASOURCE_PASSWORD: "root"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8761/eureka/"
+
+  loan1:
+    image: "prabal864/java-spring:Loans-S10"
+    container_name: Loan_MS_1
+    ports:
+      - "8089:8082"
+
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+      loansdb:
+        condition: service_healthy
+
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 700M
+    networks:
+      - bank_network
+    environment:
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8084/"
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_APPLICATION_NAME: "loans"
+      SPRING_RABBITMQ_HOST: "rabbit"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://loansdb2:3306/loans_db_2"
+      SPRING_DATASOURCE_USERNAME: "root"
+      SPRING_DATASOURCE_PASSWORD: "root"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8761/eureka/"
+
+
+  cards:
+    image: "prabal864/java-spring:Cards-S9"
+    container_name: Cards_MS
+    ports:
+      - "8083:8083"
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+      cardsdb:
+        condition: service_healthy
+
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 700M
+    networks:
+      - bank_network
+    environment:
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8084/"
+      SPRING_PROFILES_ACTIVE: default
+      SPRING_APPLICATION_NAME: "cards"
+      SPRING_RABBITMQ_HOST: "rabbit"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://cardsdb:3306/cards_db"
+      SPRING_DATASOURCE_USERNAME: "root"
+      SPRING_DATASOURCE_PASSWORD: "root"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8761/eureka/"
+
+  gatewayserver:
+    image: "prabal864/java-spring:Gateway-Server-S10"
+    container_name: Gateway_MS
+    ports:
+      - "8072:8072"
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+      rabbit:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 700M
+    networks:
+      - bank_network
+    environment:
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8084/"
+      SPRING_APPLICATION_NAME: "gatewayserver"
+      SPRING_RABBITMQ_HOST: "rabbit"
+      SPRING_DATA_REDIS_HOST: "redis"
+      SPRING_DATA_REDIS_PORT: "6379"
+      SPRING_DATA_REDIS_CONNECT-TIMEOUT: "2s"
+
+
+networks:
+  bank_network:
+    driver: bridge
+

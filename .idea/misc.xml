@@ -4,9 +4,12 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/V1/LoansMicroservice/pom.xml" />
-        <option value="$PROJECT_DIR$/V1/cards_microservice/pom.xml" />
-        <option value="$PROJECT_DIR$/V1/Accounts_Microservice/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud_config/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/LoansMicroservice/pom.xml" />
+        <option value="$PROJECT_DIR$/cards_microservice/pom.xml" />
+        <option value="$PROJECT_DIR$/Accounts_Microservice/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway_server/pom.xml" />
       </list>
     </option>
   </component>

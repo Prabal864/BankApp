@@ -1,0 +1,68 @@
+spring:
+
+  application:
+    name: "loans"
+
+  config:
+    import: ${SPRING_CONFIG_IMPORT:optional:configserver:http://localhost:8084/}
+
+  profiles:
+    active: "prod"
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3307/loans_db}
+    username: ${SPRING_DATASOURCE_URL:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:root}
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+  sql:
+    init:
+      mode: always
+
+  rabbitmq:
+    host: ${SPRING_RABBITMQ_HOST:localhost}
+    port: 5672
+    username: "guest"
+    password: "guest"
+
+server:
+  port: 8082
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  info:
+    env:
+      enabled: true
+  endpoint:
+    shutdown:
+      access: unrestricted
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
+info:
+  app:
+    name: "Loans"
+    description: "Loans Microservice"
+    version: "1.0.0"
+
+logging:
+  level:
+    com:
+      micronauticals:
+          loansmicroservice: DEBUG
