@@ -1,5 +1,17 @@
 services:
 
+  keycloak:
+    image: "quay.io/keycloak/keycloak:26.2.0"
+    container_name: keycloak
+    ports:
+      - "8070:8080"
+    environment:
+        - KEYCLOAK_ADMIN=admin
+        - KEYCLOAK_ADMIN_PASSWORD=admin
+    command: "start-dev"
+    networks:
+      - bank_network
+
   read:
     image: grafana/loki:3.1.2
     command: "-config.file=/etc/loki/config.yaml -target=read"
@@ -381,9 +393,6 @@ services:
   account:
     image: "prabal864/java-spring:Accounts-S11"
     container_name: Account-MS
-    ports:
-      - "8081:8081"
-
     depends_on:
       eurekaserver:
         condition: service_healthy
@@ -415,17 +424,12 @@ services:
   loan:
     image: "prabal864/java-spring:Loans-S11"
     container_name: Loan_MS
-    ports:
-      - "8082:8082"
-
     depends_on:
       eurekaserver:
         condition: service_healthy
       loansdb:
         condition: service_healthy
-
     deploy:
-
       resources:
         limits:
           cpus: "1"
@@ -450,14 +454,11 @@ services:
   cards:
     image: "prabal864/java-spring:Cards-S11"
     container_name: cards
-    ports:
-      - "8083:8083"
     depends_on:
       eurekaserver:
         condition: service_healthy
       cardsdb:
         condition: service_healthy
-
     deploy:
       resources:
         limits:
@@ -512,6 +513,7 @@ services:
       OTEL_METRICS_EXPORTER: none
       OTEL_LOGS_EXPORTER: none
       OTEL_SERVICE_NAME: "gatewayserver"
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI: "http://keycloak:8080/realms/master/protocol/openid-connect/certs"
 
 
 networks:
