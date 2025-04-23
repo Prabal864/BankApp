@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: "message"
+
+  cloud:
+    function:
+      definition: email|sms
