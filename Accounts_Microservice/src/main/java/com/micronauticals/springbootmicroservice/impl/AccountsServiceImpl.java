@@ -1,6 +1,7 @@
 package com.micronauticals.springbootmicroservice.impl;
 import com.micronauticals.springbootmicroservice.constants.AccountsConstants;
 import com.micronauticals.springbootmicroservice.dto.AccountsDto;
+import com.micronauticals.springbootmicroservice.dto.AccountsMsgDto;
 import com.micronauticals.springbootmicroservice.dto.CustomerDto;
 import com.micronauticals.springbootmicroservice.entity.Accounts;
 import com.micronauticals.springbootmicroservice.entity.Customer;
@@ -12,6 +13,9 @@ import com.micronauticals.springbootmicroservice.repository.AccountsRepository;
 import com.micronauticals.springbootmicroservice.repository.CustomerRepository;
 import com.micronauticals.springbootmicroservice.service.IAccountsService;
 import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.stereotype.Service;
 import java.util.Optional;
 import java.util.Random;
@@ -22,8 +26,10 @@ import java.util.Random;
 public class AccountsServiceImpl implements IAccountsService {
 
     private AccountsRepository accountsRepository;
-
+    private StreamBridge streamBridge;
     private CustomerRepository customerRepository;
+
+    private static final Logger log = LoggerFactory.getLogger(AccountsServiceImpl.class);
 
     private Accounts createdNewAccount(Customer customer){
         Accounts newAccount = new Accounts();
@@ -44,7 +50,16 @@ public class AccountsServiceImpl implements IAccountsService {
             throw new CustomerAlreadyExistsException("Customer already exists with mobile number: "+customerDto.getMobileNumber());
         }
         Customer savedCustomer = customerRepository.save(customer);
-        accountsRepository.save(createdNewAccount(savedCustomer));
+        Accounts savedAccount = accountsRepository.save(createdNewAccount(savedCustomer));
+        sendCommunication(savedAccount, savedCustomer);
+    }
+
+    private void sendCommunication(Accounts account, Customer customer){
+        var accountsMsgDto = new AccountsMsgDto(account.getAccountNumber(), customer.getName(),
+                customer.getEmail(), customer.getMobileNumber());
+        log.info("Sending communication to request for the details: {}", accountsMsgDto);
+        var result = streamBridge.send("sendCommunication-out-0", accountsMsgDto);
+        log.info("Message sent: {}", result);
     }
 
     @Override

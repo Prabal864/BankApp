@@ -1,3 +1,6 @@
+server:
+  port: 9091
+
 spring:
   application:
     name: "message"
@@ -5,3 +8,16 @@ spring:
   cloud:
     function:
       definition: email|sms
+
+    stream:
+      bindings:
+        emailsms-in-0:
+          destination: send-communication
+          group: message
+
+  rabbitmq:
+    host: ${SPRING_RABBITMQ_HOST:localhost}
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 10s
