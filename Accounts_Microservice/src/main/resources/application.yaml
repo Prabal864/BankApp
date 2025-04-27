@@ -30,12 +30,18 @@ spring:
       openfeign:
         circuitbreaker:
           enabled: true
-
       stream:
         bindings:
+          # Input binding for receiving communication update events
+          updateCommunication-in-0:
+            destination: communication-sent
+            group: accounts
+          # Output binding for sending communication events to downstream services  
           sendCommunication-out-0:
             destination: send-communication
-
+      function:
+        # Function definition for processing communication updates
+        definition: updateCommunication
 resilience4j.circuitbreaker:
   configs:
     default:
