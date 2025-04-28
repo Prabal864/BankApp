@@ -330,9 +330,21 @@ services:
     networks:
       - bank_network
 
+  message:
+    image: "prabal864/java-spring:Messages-S12"
+    container_name: Message_ms
+    deploy:
+      resources:
+        limits:
+          cpus: "0.75"
+          memory: 500M
+    networks:
+      - bank_network
+    environment:
+      SPRING_RABBITMQ_HOST: "rabbit"
 
   configserver:
-    image: "prabal864/java-spring:Config-Server-S11"
+    image: "prabal864/java-spring:Config-Server-S12"
     container_name: configserver-ms
     ports:
       - "8084:8084"
@@ -361,7 +373,7 @@ services:
        OTEL_SERVICE_NAME: "configserver"
 
   eurekaserver:
-    image: "prabal864/java-spring:Eureka-Server-S11"
+    image: "prabal864/java-spring:Eureka-Server-S12"
     container_name: eurekaserver
     ports:
       - "8761:8761"
@@ -391,7 +403,7 @@ services:
       OTEL_SERVICE_NAME: "eurekaserver"
 
   account:
-    image: "prabal864/java-spring:Accounts-S11"
+    image: "prabal864/java-spring:Accounts-S12"
     container_name: Account-MS
     depends_on:
       eurekaserver:
@@ -422,7 +434,7 @@ services:
       OTEL_SERVICE_NAME: "accounts"
 
   loan:
-    image: "prabal864/java-spring:Loans-S11"
+    image: "prabal864/java-spring:Loans-S12"
     container_name: Loan_MS
     depends_on:
       eurekaserver:
@@ -452,7 +464,7 @@ services:
       OTEL_SERVICE_NAME: "loans"
 
   cards:
-    image: "prabal864/java-spring:Cards-S11"
+    image: "prabal864/java-spring:Cards-S12"
     container_name: cards
     depends_on:
       eurekaserver:
@@ -482,7 +494,7 @@ services:
       OTEL_SERVICE_NAME: "cards"
 
   gatewayserver:
-    image: "prabal864/java-spring:Gateway-Server-S11"
+    image: "prabal864/java-spring:Gateway-Server-S12"
     container_name: Gateway_MS
     ports:
       - "8072:8072"
