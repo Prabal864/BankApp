@@ -19,12 +19,6 @@ spring:
     sql:
       init:
         mode: always
-    rabbitmq:
-      host: ${SPRING_RABBITMQ_HOST:localhost}
-      port: 5672
-      username: ${SPRING_RABBITMQ_USERNAME:guest}
-      password: ${SPRING_RABBITMQ_PASSWORD:guest}
-      connection-timeout: 10s
 
     cloud:
       openfeign:
@@ -39,9 +33,17 @@ spring:
           # Output binding for sending communication events to downstream services  
           sendCommunication-out-0:
             destination: send-communication
+        kafka:
+          binder:
+            brokers:
+              - localhost:29092
+        default-binder: kafka
+
       function:
         # Function definition for processing communication updates
         definition: updateCommunication
+
+
 resilience4j.circuitbreaker:
   configs:
     default:

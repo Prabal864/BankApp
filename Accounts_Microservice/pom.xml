@@ -137,7 +137,7 @@
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
+            <artifactId>spring-cloud-stream-binder-kafka</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -175,7 +175,7 @@
                         <image>eclipse-temurin:21-jre-alpine</image>
                     </from>
                     <to>
-                        <image>prabal864/java-spring:Accounts-S12</image>
+                        <image>prabal864/java-spring:Accounts-S14</image>
                     </to>
                 </configuration>
             </plugin>
