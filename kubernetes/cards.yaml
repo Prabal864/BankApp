@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cards-deployment
+  labels:
+    app: cards
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cards
+  template:
+    metadata:
+      labels:
+        app: cards
+    spec:
+      containers:
+        - name: cards
+          image: prabal864/java-spring:Cards-S15
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8083
+          env:
+            - name: SPRING_CONFIG_IMPORT
+              value: "configserver:http://configserver:8084/"
+            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+              value: "http://eureka-service:8761/eureka/"
+            - name: SPRING_RABBITMQ_HOST
+              value: "rabbit-service"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: cards-service
+spec:
+  selector:
+    app: cards
+  type: LoadBalancer
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8083
+      targetPort: 8083
