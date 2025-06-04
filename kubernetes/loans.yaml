@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loans-deployment
+  labels:
+    app: loans
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loans
+  template:
+    metadata:
+      labels:
+        app: loans
+    spec:
+      containers:
+        - name: loans
+          image: prabal864/java-spring:Loans-S15
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8082
+          env:
+            - name: SPRING_CONFIG_IMPORT
+              value: "configserver:http://configserver:8084/"
+            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+              value: "http://eureka-service:8761/eureka/"
+            - name: SPRING_RABBITMQ_HOST
+              value: "rabbit-service"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: loans-service
+spec:
+  selector:
+    app: loans
+  type: LoadBalancer
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8082
+      targetPort: 8082
