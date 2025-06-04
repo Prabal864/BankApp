@@ -10,7 +10,7 @@ spring:
     active: "prod"
 
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3307/loans_db}
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://host.docker.internal:3307/loans_db}
     username: ${SPRING_DATASOURCE_URL:root}
     password: ${SPRING_DATASOURCE_PASSWORD:root}
 
