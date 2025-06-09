@@ -1,0 +1,76 @@
+<changelist name="Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]" date="1749458911443" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 09-06-2025 14:18 [Changes]" />
+  <binary>
+    <option name="AFTER_PATH" value="docker-compose/default/.data/minio/.minio.sys/tmp/78a13e92-da2b-4e84-88ed-18946b0bfb6e" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/78a13e92-da2b-4e84-88ed-18946b0bfb6e" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="kubernetes/helm/environments/dev/charts/cards-0.1.0.tgz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/cards-0.1.0.tgz" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="kubernetes/helm/environments/dev/charts/accounts-0.1.0.tgz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/accounts-0.1.0.tgz" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="kubernetes/helm/environments/dev/charts/message-0.1.0.tgz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/message-0.1.0.tgz" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="kubernetes/helm/environments/dev/charts/microservices-common-0.1.0.tgz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/microservices-common-0.1.0.tgz" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="kubernetes/helm/environments/dev/charts/eurekaserver-0.1.0.tgz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/eurekaserver-0.1.0.tgz" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="kubernetes/helm/services/message/charts/microservices-common-0.1.0.tgz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/microservices-common-0.1.01.tgz" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="kubernetes/helm/services/cards/charts/microservices-common-0.1.0.tgz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/microservices-common-0.1.02.tgz" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="docker-compose/default/.data/minio/.minio.sys/buckets/.heal/mrf/list.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/list.bin" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="kubernetes/helm/services/configserver/charts/microservices-common-0.1.0.tgz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/microservices-common-0.1.03.tgz" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="kubernetes/helm/services/accounts/charts/microservices-common-0.1.0.tgz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/microservices-common-0.1.04.tgz" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="kubernetes/helm/environments/dev/charts/gatewayserver-0.1.0.tgz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/gatewayserver-0.1.0.tgz" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="kubernetes/helm/environments/dev/charts/loans-0.1.0.tgz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/loans-0.1.0.tgz" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="kubernetes/helm/services/gatewayserver/charts/microservices-common-0.1.0.tgz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/microservices-common-0.1.05.tgz" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="kubernetes/helm/environments/dev/charts/configserver-0.1.0.tgz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/configserver-0.1.0.tgz" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="docker-compose/default/.data/minio/loki-data/tenant1/e249fd26c5d98a01/196513327d019651a11fbe331c13f6/b69669a7-6875-4510-8ef0-da2391dba186/part.1" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/part.1" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="kubernetes/helm/services/loans/charts/microservices-common-0.1.0.tgz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/microservices-common-0.1.06.tgz" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="kubernetes/helm/services/eurekaserver/charts/microservices-common-0.1.0.tgz" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09-06-2025_14_18_[Changes]/microservices-common-0.1.07.tgz" />
+  </binary>
+</changelist>
