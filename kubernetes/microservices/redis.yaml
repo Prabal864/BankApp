@@ -31,7 +31,7 @@ metadata:
 spec:
   selector:
     app: redis
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - name: redis
       protocol: TCP
