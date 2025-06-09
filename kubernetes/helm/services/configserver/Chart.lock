@@ -1,0 +1,6 @@
+dependencies:
+- name: microservices-common
+  repository: file://../../microservices-common
+  version: 0.1.0
+digest: sha256:8c45e2616209a7d80c3228d56c958c4a3dd5760b320fd31e6ba853d168465ad5
+generated: "2025-06-09T12:57:33.0231561+05:30"
