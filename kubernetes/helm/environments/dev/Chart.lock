@@ -1,0 +1,27 @@
+dependencies:
+- name: microservices-common
+  repository: file://../../microservices-common
+  version: 0.1.0
+- name: configserver
+  repository: file://../../services/configserver
+  version: 0.1.0
+- name: eurekaserver
+  repository: file://../../services/eurekaserver
+  version: 0.1.0
+- name: accounts
+  repository: file://../../services/accounts
+  version: 0.1.0
+- name: cards
+  repository: file://../../services/cards
+  version: 0.1.0
+- name: loans
+  repository: file://../../services/loans
+  version: 0.1.0
+- name: gatewayserver
+  repository: file://../../services/gatewayserver
+  version: 0.1.0
+- name: message
+  repository: file://../../services/message
+  version: 0.1.0
+digest: sha256:b460e691efe4ed97d32f5da07ed3962e6424d852b69f9bdc812532690b0a675e
+generated: "2025-06-09T13:57:56.6432689+05:30"
