@@ -13,4 +13,8 @@ data:
   OTEL_METRICS_EXPORTER: "{{ .Values.global.otelMetricsExporter }}"
   OTEL_LOGS_EXPORTER: "{{ .Values.global.otelLogsExporter }}"
   SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: "{{ .Values.global.kafkaBrokerURL }}"
+  RABBITMQ_USERNAME: "{{ .Values.global.rabbitmqUsername }}"
+  RABBITMQ_PASSWORD: "{{ .Values.global.rabbitmqPassword }}"
+  RABBITMQ_HOST: "{{ .Values.global.rabbitmqHost | default "rabbitmq.default.svc.cluster.local" }}"
+  RABBITMQ_PORT: "{{ .Values.global.rabbitmqPort | default "5672" }}"
   {{- end -}}
