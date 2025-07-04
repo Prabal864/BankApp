@@ -7,9 +7,18 @@ replicaCount: 1
 
 image:
   repository: prabal864/java-spring
-  tag: loans-S15
+  tag: Loans-S15
 
 containerPort: 8082
+
+resources:
+  requests:
+    memory: "128Mi"
+    cpu: "100m"
+  limits:
+    memory: "256Mi"
+    cpu: "300m"
+
 
 service:
   type: ClusterIP
