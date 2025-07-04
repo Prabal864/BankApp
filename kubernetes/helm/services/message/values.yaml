@@ -11,6 +11,15 @@ image:
 
 containerPort: 9091
 
+resources:
+  requests:
+    memory: "128Mi"
+    cpu: "100m"
+  limits:
+    memory: "256Mi"
+    cpu: "300m"
+
+
 service:
   type: ClusterIP
   port: 9091
