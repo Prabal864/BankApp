@@ -11,6 +11,15 @@ image:
 
 containerPort: 8083
 
+resources:
+  requests:
+    memory: "128Mi"
+    cpu: "100m"
+  limits:
+    memory: "256Mi"
+    cpu: "300m"
+
+
 service:
   type: ClusterIP
   port: 8083
@@ -23,3 +32,4 @@ eureka_enabled: true
 resouceserver_enabled: false
 otel_enabled: true
 kafka_enabled: false
+rabbitmq_enabled: true
