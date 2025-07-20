@@ -5,13 +5,13 @@ spring:
     name: "cards"
 
   config:
-    import: "optional:configserver:http://localhost:8084/"
+    import: ${SPRING_CONFIG_IMPORT:optional:configserver:http://localhost:8084/}
 
   profiles:
     active: ${SPRING_PROFILES_ACTIVE:default}
 
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/accounts_db}
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://host.docker.internal:3308/cards_db}
     username: ${SPRING_DATASOURCE_URL:root}
     password: ${SPRING_DATASOURCE_PASSWORD:root}
 
@@ -27,8 +27,8 @@ spring:
   rabbitmq:
     host: ${SPRING_RABBITMQ_HOST:localhost}
     port: 5672
-    username: "guest"
-    password: "guest"
+    username: ${SPRING_RABBITMQ_USERNAME:guest }
+    password: ${SPRING_RABBITMQ_PASSWORD:guest }
 
 management:
   endpoints:
@@ -41,6 +41,9 @@ management:
   endpoint:
     shutdown:
       access: unrestricted
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 eureka:
   instance:
@@ -61,3 +64,5 @@ logging:
   level:
     com:
       cards_microservice: DEBUG
+  pattern:
+    level: "%5p[${spring.application.name},%X{trace_id},%X{span_id}]"

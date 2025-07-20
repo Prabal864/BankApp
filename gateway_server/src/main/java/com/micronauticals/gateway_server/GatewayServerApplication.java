@@ -69,7 +69,7 @@ public class GatewayServerApplication {
 
     @Bean
     KeyResolver userKeyResolver() {
-        return exchange -> Mono.just(Objects.requireNonNull(exchange.getRequest().getQueryParams().getFirst("user")))
+        return exchange -> Mono.just(Objects.requireNonNull(exchange.getRequest().getQueryParams().getFirst("mobileNumber")))
                 .defaultIfEmpty("anonymous");
     }
 

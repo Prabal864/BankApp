@@ -14,11 +14,17 @@ spring:
         connect-timeout: 1000
         response-timeout: 5s
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${SPRING_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI:http://localhost:8070/realms/master/protocol/openid-connect/certs}
+
   data:
     redis:
       connect-timeout: 2s
-      host: localhost
-      port: 6379
+      host: ${SPRING_DATA_REDIS_HOST:localhost}
+      port: ${SPRING_DATA_REDIS_PORT:6379}
 
   rabbitmq:
     host: ${SPRING_RABBITMQ_HOST:localhost}
@@ -34,6 +40,9 @@ management:
   endpoint:
     gateway:
       access: unrestricted
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
   info:
     env:
@@ -44,6 +53,9 @@ logging:
     com:
       micronauticals:
         gateway_server: DEBUG
+
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
 
 info:
   app:

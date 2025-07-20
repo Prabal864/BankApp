@@ -1,6 +1,7 @@
 package com.micronauticals.springbootmicroservice.entity;
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
@@ -18,6 +19,7 @@ public class Accounts extends BaseEntity {
     private Long accountNumber;
     private String accountType;
     private String branchAddress;
+    private Boolean communicationSw;
 
 
 }

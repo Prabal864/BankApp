@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+V2_Cloud_Config
+xl.meta
+=======
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -31,3 +35,4 @@ build/
 
 ### VS Code ###
 .vscode/
+>>>>>>> Prabal864/main
