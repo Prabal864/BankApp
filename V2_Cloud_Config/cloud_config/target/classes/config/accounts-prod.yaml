@@ -1,13 +1,9 @@
-<<<<<<< HEAD:V2_Cloud_Config/cloud_config/src/main/resources/config/cards-prod.yaml
 <<<<<<<< HEAD:cloud_config/src/main/resources/config/cards-prod.yaml
-=======
->>>>>>> Logging_Monitoring:cloud_config/src/main/resources/config/cards-prod.yaml
 build:
   version: "0.0.3"
 
 cards:
   message: "Welcome to PRODUCTION-1 environment Cards Microservice"
-<<<<<<< HEAD:V2_Cloud_Config/cloud_config/src/main/resources/config/cards-prod.yaml
 ========
 
 build:
@@ -16,8 +12,6 @@ build:
 accounts:
   message: "Welcome to PRODUCTION-1 environment Accounts Microservice"
 >>>>>>>> Logging_Monitoring:V2_Cloud_Config/cloud_config/target/classes/config/accounts-prod.yaml
-=======
->>>>>>> Logging_Monitoring:cloud_config/src/main/resources/config/cards-prod.yaml
   contactDetails:
     name: "Production Team"
     email: "production@test.com"

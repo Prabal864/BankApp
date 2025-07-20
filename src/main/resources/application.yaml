@@ -1,0 +1,44 @@
+server:
+<<<<<<< HEAD
+  port: 8081
+
+spring:
+    application:
+      name: SpringBootMicroservice
+    datasource:
+        url: jdbc:h2:mem:springbootdb
+        username: sa
+        password: ''
+        driver-class-name: org.h2.Driver
+    jpa:
+        hibernate:
+          ddl-auto: update
+        show-sql: true
+    h2:
+        console:
+          enabled: true
+
+
+
+
+
+
+
+
+=======
+  port: 8083
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+>>>>>>> origin/Cards_Microservice

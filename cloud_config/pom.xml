@@ -109,6 +109,16 @@
                 </configuration>
 
             </plugin>
+<<<<<<< HEAD:V2_Cloud_Config/cloud_config/pom.xml
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.4.2</version>
+                <configuration>
+                    <to>
+                        <image>prabal864/java-spring:Config-Server</image>
+                    </to>
+=======
 
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
@@ -122,6 +132,7 @@
                         <image>prabal864/java-spring:Config-Server-S15</image>
                     </to>
 
+>>>>>>> Logging_Monitoring:cloud_config/pom.xml
                 </configuration>
             </plugin>
         </plugins>
